@@ -113,8 +113,8 @@ export const constantRoutes = [
         meta: { title: '角色组', icon: 'circle', affix: true }
       },
       {
-        path: 'entryDomain',
-        component: () => import('@/views/projectManagement/entryDomain'),
+        path: 'operationLog',
+        component: () => import('@/views/authorityManagement/operationLog'),
         name: 'OperationLog',
         meta: { title: '操作日志', icon: 'circle' }
       },
