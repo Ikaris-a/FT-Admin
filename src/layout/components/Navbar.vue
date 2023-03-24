@@ -54,6 +54,7 @@
             <span style="display: block">Log Out</span>
           </el-dropdown-item>
         </el-dropdown-menu> -->
+        <el-dropdown-menu />
       </el-dropdown>
     </div>
   </div>

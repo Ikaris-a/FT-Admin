@@ -70,13 +70,59 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/projectManagement/index',
+    name: 'ProjectManagement',
+    meta: {
+      title: '项目管理',
+      icon: 'menu' // you can set roles in root nav
+    },
     children: [
       {
-        path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        path: 'projectManagement/index',
+        component: () => import('@/views/projectManagement/index'),
+        name: 'Project',
+        meta: { title: '项目', icon: 'circle', affix: true }
+      },
+      {
+        path: 'projectManagement/entryDomain',
+        component: () => import('@/views/projectManagement/entryDomain'),
+        name: 'EntryDomain',
+        meta: { title: '入口域名', icon: 'circle' }
+      },
+      {
+        path: 'projectManagement/jumpDomain',
+        component: () => import('@/views/projectManagement/jumpDomain'),
+        name: 'JumpDomain',
+        meta: { title: '跳转域名', icon: 'circle' }
+      }
+    ]
+  },
+  {
+    path: '/authorityManagement',
+    component: Layout,
+    name: 'AuthorityManagement',
+    meta: {
+      title: '权限管理',
+      icon: 'menu' // you can set roles in root nav
+    },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/projectManagement/index'),
+        name: 'RoleGroup',
+        meta: { title: '角色组', icon: 'circle', affix: true }
+      },
+      {
+        path: 'entryDomain',
+        component: () => import('@/views/projectManagement/entryDomain'),
+        name: 'OperationLog',
+        meta: { title: '操作日志', icon: 'circle' }
+      },
+      {
+        path: 'personnelManagement',
+        component: () => import('@/views/projectManagement/jumpDomain'),
+        name: 'PersonnelManagement',
+        meta: { title: '人员管理', icon: 'circle' }
       }
     ]
   }
@@ -150,7 +196,7 @@ const createRouter = () =>
     //   ]
     // },
     {
-      // mode: 'history', // require service support
+      mode: 'history', // require service support
       scrollBehavior: () => ({ y: 0 }),
       routes: constantRoutes
     }
